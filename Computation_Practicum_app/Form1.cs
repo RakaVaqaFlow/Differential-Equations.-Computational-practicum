@@ -26,32 +26,41 @@ namespace Computation_Practicum_app
                 double X = Double.Parse(textBox_X.Text);
                 int N = Int32.Parse(textBox_N.Text);
 
+                EM newEM = new EM(N, y0, x0, X);
+                IEM newIEM = new IEM(N, y0, x0, X);
+                RKM newRKM = new RKM(N, y0, x0, X);
+                ES newES = new ES(N, y0, x0, X);
+
+                chart1.Series[0].Points.DataBindXY(newEM.x, newEM.y);
+                chart1.Series[1].Points.DataBindXY(newIEM.x, newIEM.y);
+                chart1.Series[2].Points.DataBindXY(newRKM.x, newRKM.y);
+                chart1.Series[3].Points.DataBindXY(newES.x, newES.y);
             }
             catch
             {
                 MessageBox.Show("Wrong data format!");
             }
-            //EM newEM = new EM(N, X, x0, y0);
+            
         }
 
         private void checkBox_EM_CheckedChanged(object sender, EventArgs e)
         {
-
+            chart1.Series[0].Enabled = checkBox_EM.Checked;
         }
 
         private void checkBox_IEM_CheckedChanged(object sender, EventArgs e)
         {
-
+            chart1.Series[1].Enabled = checkBox_IEM.Checked;
         }
 
         private void checkBox_RKM_CheckedChanged(object sender, EventArgs e)
         {
-
+            chart1.Series[2].Enabled = checkBox_RKM.Checked;
         }
 
         private void checkBox_ES_CheckedChanged(object sender, EventArgs e)
         {
-
+            chart1.Series[3].Enabled = checkBox_ES.Checked;
         }
     }
 }
