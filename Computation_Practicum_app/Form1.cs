@@ -82,5 +82,16 @@ namespace Computation_Practicum_app
             button_Plot_Click(sender, e);
         }
 
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tabControl.SelectedIndex == 0)
+            {
+                checkBox_ES.Visible = true;
+            }
+            else if (tabControl.SelectedIndex == 1)
+            {
+                checkBox_ES.Visible = false;
+            }
+        }
     }
 }
