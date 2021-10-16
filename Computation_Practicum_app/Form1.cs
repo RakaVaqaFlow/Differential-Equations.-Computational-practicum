@@ -16,5 +16,20 @@ namespace Computation_Practicum_app
         {
             InitializeComponent();
         }
+
+        private void button_Plot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox_EM_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox_IEM_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
