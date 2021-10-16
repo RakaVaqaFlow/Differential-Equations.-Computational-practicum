@@ -29,14 +29,21 @@ namespace Computation_Practicum_app
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.checkBox_ES = new System.Windows.Forms.CheckBox();
+            this.checkBox_RKM = new System.Windows.Forms.CheckBox();
             this.checkBox_IEM = new System.Windows.Forms.CheckBox();
             this.checkBox_EM = new System.Windows.Forms.CheckBox();
             this.button_Plot = new System.Windows.Forms.Button();
@@ -48,13 +55,19 @@ namespace Computation_Practicum_app
             this.label_x0 = new System.Windows.Forms.Label();
             this.textBox_y0 = new System.Windows.Forms.TextBox();
             this.label_y0 = new System.Windows.Forms.Label();
-            this.checkBox_RKM = new System.Windows.Forms.CheckBox();
-            this.checkBox_ES = new System.Windows.Forms.CheckBox();
+            this.tabPage = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -65,7 +78,7 @@ namespace Computation_Practicum_app
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.chart1);
+            this.splitContainer1.Panel1.Controls.Add(this.tabPage);
             // 
             // splitContainer1.Panel2
             // 
@@ -88,46 +101,74 @@ namespace Computation_Practicum_app
             // 
             // chart1
             // 
-            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.LegendText = "Euler method";
-            series5.Name = "Series_EM";
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.LegendText = "Imp. Euler\'s method";
-            series6.Name = "Series_IEM";
-            series7.BorderWidth = 2;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.LegendText = "Runge Kutta method";
-            series7.Name = "Series_RK";
-            series8.BorderWidth = 2;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Legend1";
-            series8.LegendText = "Exact solution";
-            series8.Name = "Series_ES";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Size = new System.Drawing.Size(513, 450);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Euler method";
+            series1.Name = "Series_EM";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.LegendText = "Imp. Euler\'s method";
+            series2.Name = "Series_IEM";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.LegendText = "Runge Kutta method";
+            series3.Name = "Series_RK";
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.LegendText = "Exact solution";
+            series4.Name = "Series_ES";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(499, 415);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            // 
+            // checkBox_ES
+            // 
+            this.checkBox_ES.AutoSize = true;
+            this.checkBox_ES.Checked = true;
+            this.checkBox_ES.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_ES.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox_ES.Location = new System.Drawing.Point(0, 304);
+            this.checkBox_ES.Name = "checkBox_ES";
+            this.checkBox_ES.Size = new System.Drawing.Size(283, 21);
+            this.checkBox_ES.TabIndex = 19;
+            this.checkBox_ES.Text = "ES";
+            this.checkBox_ES.UseVisualStyleBackColor = true;
+            this.checkBox_ES.CheckedChanged += new System.EventHandler(this.checkBox_ES_CheckedChanged);
+            // 
+            // checkBox_RKM
+            // 
+            this.checkBox_RKM.AutoSize = true;
+            this.checkBox_RKM.Checked = true;
+            this.checkBox_RKM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_RKM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox_RKM.Location = new System.Drawing.Point(0, 283);
+            this.checkBox_RKM.Name = "checkBox_RKM";
+            this.checkBox_RKM.Size = new System.Drawing.Size(283, 21);
+            this.checkBox_RKM.TabIndex = 18;
+            this.checkBox_RKM.Text = "RKM";
+            this.checkBox_RKM.UseVisualStyleBackColor = true;
+            this.checkBox_RKM.CheckedChanged += new System.EventHandler(this.checkBox_RKM_CheckedChanged);
             // 
             // checkBox_IEM
             // 
@@ -178,7 +219,7 @@ namespace Computation_Practicum_app
             this.textBox_N.Name = "textBox_N";
             this.textBox_N.Size = new System.Drawing.Size(283, 22);
             this.textBox_N.TabIndex = 14;
-            this.textBox_N.Text = "20";
+            this.textBox_N.Text = "1000";
             this.textBox_N.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_N
@@ -198,7 +239,7 @@ namespace Computation_Practicum_app
             this.textBox_X.Name = "textBox_X";
             this.textBox_X.Size = new System.Drawing.Size(283, 22);
             this.textBox_X.TabIndex = 12;
-            this.textBox_X.Text = "10";
+            this.textBox_X.Text = "3";
             this.textBox_X.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_X
@@ -238,7 +279,7 @@ namespace Computation_Practicum_app
             this.textBox_y0.Name = "textBox_y0";
             this.textBox_y0.Size = new System.Drawing.Size(283, 22);
             this.textBox_y0.TabIndex = 1;
-            this.textBox_y0.Text = "0";
+            this.textBox_y0.Text = "1,41421356";
             this.textBox_y0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_y0
@@ -251,33 +292,72 @@ namespace Computation_Practicum_app
             this.label_y0.TabIndex = 0;
             this.label_y0.Text = "y₀";
             // 
-            // checkBox_RKM
+            // tabPage
             // 
-            this.checkBox_RKM.AutoSize = true;
-            this.checkBox_RKM.Checked = true;
-            this.checkBox_RKM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_RKM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_RKM.Location = new System.Drawing.Point(0, 283);
-            this.checkBox_RKM.Name = "checkBox_RKM";
-            this.checkBox_RKM.Size = new System.Drawing.Size(283, 21);
-            this.checkBox_RKM.TabIndex = 18;
-            this.checkBox_RKM.Text = "RKM";
-            this.checkBox_RKM.UseVisualStyleBackColor = true;
-            this.checkBox_RKM.CheckedChanged += new System.EventHandler(this.checkBox_RKM_CheckedChanged);
+            this.tabPage.Controls.Add(this.tabPage1);
+            this.tabPage.Controls.Add(this.tabPage2);
+            this.tabPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPage.Location = new System.Drawing.Point(0, 0);
+            this.tabPage.Name = "tabPage";
+            this.tabPage.SelectedIndex = 0;
+            this.tabPage.Size = new System.Drawing.Size(513, 450);
+            this.tabPage.TabIndex = 1;
             // 
-            // checkBox_ES
+            // tabPage1
             // 
-            this.checkBox_ES.AutoSize = true;
-            this.checkBox_ES.Checked = true;
-            this.checkBox_ES.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_ES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_ES.Location = new System.Drawing.Point(0, 304);
-            this.checkBox_ES.Name = "checkBox_ES";
-            this.checkBox_ES.Size = new System.Drawing.Size(283, 21);
-            this.checkBox_ES.TabIndex = 19;
-            this.checkBox_ES.Text = "ES";
-            this.checkBox_ES.UseVisualStyleBackColor = true;
-            this.checkBox_ES.CheckedChanged += new System.EventHandler(this.checkBox_ES_CheckedChanged);
+            this.tabPage1.Controls.Add(this.chart1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(505, 421);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "sol. graph";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chart2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(505, 421);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "error graph";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(3, 3);
+            this.chart2.Name = "chart2";
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.LegendText = "EM error";
+            series5.Name = "Series_EM_Error";
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.LegendText = "IEM error";
+            series6.Name = "Series_IEM_Error";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.LegendText = "RKM error";
+            series7.Name = "Series3";
+            this.chart2.Series.Add(series5);
+            this.chart2.Series.Add(series6);
+            this.chart2.Series.Add(series7);
+            this.chart2.Size = new System.Drawing.Size(499, 415);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart2";
             // 
             // Form1
             // 
@@ -289,12 +369,17 @@ namespace Computation_Practicum_app
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Computational practicum";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabPage.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,6 +401,10 @@ namespace Computation_Practicum_app
         private System.Windows.Forms.Label label_X;
         private System.Windows.Forms.CheckBox checkBox_ES;
         private System.Windows.Forms.CheckBox checkBox_RKM;
+        private System.Windows.Forms.TabControl tabPage;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }
 

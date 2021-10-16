@@ -35,6 +35,17 @@ namespace Computation_Practicum_app
                 chart1.Series[1].Points.DataBindXY(newIEM.x, newIEM.y);
                 chart1.Series[2].Points.DataBindXY(newRKM.x, newRKM.y);
                 chart1.Series[3].Points.DataBindXY(newES.x, newES.y);
+
+                chart2.Series[0].Points.DataBindXY(newEM.x, newEM.y);
+                chart2.Series[1].Points.DataBindXY(newIEM.x, newIEM.y);
+                chart2.Series[2].Points.DataBindXY(newRKM.x, newRKM.y);
+                
+
+                chart1.ChartAreas[0].AxisX.Minimum = x0;
+                chart1.ChartAreas[0].AxisX.Maximum = X;
+
+                chart2.ChartAreas[0].AxisX.Minimum = x0;
+                chart2.ChartAreas[0].AxisX.Maximum = X;
             }
             catch
             {
@@ -46,21 +57,30 @@ namespace Computation_Practicum_app
         private void checkBox_EM_CheckedChanged(object sender, EventArgs e)
         {
             chart1.Series[0].Enabled = checkBox_EM.Checked;
+            chart2.Series[0].Enabled = checkBox_EM.Checked;
         }
 
         private void checkBox_IEM_CheckedChanged(object sender, EventArgs e)
         {
             chart1.Series[1].Enabled = checkBox_IEM.Checked;
+            chart2.Series[1].Enabled = checkBox_IEM.Checked;
         }
 
         private void checkBox_RKM_CheckedChanged(object sender, EventArgs e)
         {
             chart1.Series[2].Enabled = checkBox_RKM.Checked;
+            chart2.Series[2].Enabled = checkBox_RKM.Checked;
         }
 
         private void checkBox_ES_CheckedChanged(object sender, EventArgs e)
         {
             chart1.Series[3].Enabled = checkBox_ES.Checked;
         }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            button_Plot_Click(sender, e);
+        }
+
     }
 }
