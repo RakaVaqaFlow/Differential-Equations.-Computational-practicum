@@ -8,21 +8,33 @@ namespace Computation_Practicum_app
 {
     public class MyDifferentialEquation : DifferentialEquation 
     {
-        MyDifferentialEquation(int N, double y0, double x0, double X): base(N, y0, x0, X) {
-             
+        public MyDifferentialEquation(int N, double y0, double x0, double X): base(N, y0, x0, X) {
+            if (findDiscontinuityPoints().Length != 0)
+            {
+                
+            }
+            calcExactSolution();
         }
 
-        public override double calcDerivative(double x, double y) { }
-        public override double[] calcExactSolution() {
-            double h = (X - x0) / N;
-            for (int i = 0; i < N; i++)
+        public override double calcDerivative(double x, double y) {
+            return x * y - x * Math.Pow(y, 3);        
+        }
+        protected override void calcExactSolution()
+        {
+            double h = getStep();
+            double[] x = getX();
+            double[] y = getY();
+            for (int i = 0; i < getN(); i++)
             {
-                if (i == 0) y[i] = y0;
+                if (i == 0) y[i] = getY0();
                 else y[i] = Math.Sqrt(Math.Exp(Math.Pow(x[i - 1], 2)) / (1 + Math.Exp(Math.Pow(x[i - 1], 2))));
             }
+            setY(y);
         }
-        protected override bool isCountinious(double x0, double X) {
-            return true;
+
+        //let's return empty list, because my equation has no discontinuity points 
+        protected override double[] findDiscontinuityPoints() { 
+            return new List<double>().ToArray(); 
         }
 
     }

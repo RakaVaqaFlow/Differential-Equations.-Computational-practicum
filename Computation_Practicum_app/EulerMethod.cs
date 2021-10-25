@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Computation_Practicum_app
 {
-    public class EM : Grid
+    public class EulerMethod : Grid
     {
-        public EM(int N, double y0, double x0, double X):base(N, x0, X)
+        public EulerMethod(int N, double y0, double x0, double X):base(N, x0, X)
         {
             double h = (X - x0) / N;
             for (int i=0; i<N; i++)
