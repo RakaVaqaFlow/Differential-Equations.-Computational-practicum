@@ -11,6 +11,7 @@ namespace Computation_Practicum_app
         protected DifferentialEquation differentialEquation;
         public NumericalMethod(int N, double y0, double x0, double X, DifferentialEquation DE)
             : base(N, y0, x0, X) {
+            this.differentialEquation = DE;
 
             double h = getStep();
             double[] y = getY();
@@ -21,9 +22,8 @@ namespace Computation_Practicum_app
                 if (i == 0) y[i] = y0;
                 else y[i] = calcY(x[i - 1], y[i - 1]);
             }
-
             this.setY(y);
-            this.differentialEquation = DE;
+            
         }
 
         protected abstract double calcY(double prevX, double prevY);

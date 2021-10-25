@@ -25,12 +25,14 @@ namespace Computation_Practicum_app
                 double x0 = Double.Parse(textBox_x0.Text);
                 double X = Double.Parse(textBox_X.Text);
                 int N = Int32.Parse(textBox_N.Text);
-                /*
-                EulerMethod newEM = new EulerMethod(N, y0, x0, X);
-                ImprovedEulerMethod newIEM = new ImprovedEulerMethod(N, y0, x0, X);
-                RungeKuttaMethod newRKM = new RungeKuttaMethod(N, y0, x0, X);
-                DifferentialEquation newES = new MyDifferentialEquation(N, y0, x0, X);
-                
+
+                DifferentialEquation newDE = new MyDifferentialEquation(N, y0, x0, X);
+
+                NumericalMethod newEM = new EulerMethod(N, y0, x0, X, newDE);
+                NumericalMethod newIEM = new ImprovedEulerMethod(N, y0, x0, X, newDE);
+                NumericalMethod newRKM = new RungeKuttaMethod(N, y0, x0, X, newDE);
+
+
                 chart1.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
                 chart1.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
                 chart1.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
@@ -46,7 +48,7 @@ namespace Computation_Practicum_app
 
                 chart2.ChartAreas[0].AxisX.Minimum = x0;
                 chart2.ChartAreas[0].AxisX.Maximum = X;
-                */
+                
             }
             catch
             {
