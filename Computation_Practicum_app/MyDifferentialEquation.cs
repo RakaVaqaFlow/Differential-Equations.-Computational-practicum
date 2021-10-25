@@ -11,7 +11,8 @@ namespace Computation_Practicum_app
         public MyDifferentialEquation(int N, double y0, double x0, double X): base(N, y0, x0, X) {
             if (findDiscontinuityPoints().Length != 0)
             {
-                
+                string message = "The function has a discontinuity point in this interval!";
+                throw new Exception(message);
             }
             calcExactSolution();
         }

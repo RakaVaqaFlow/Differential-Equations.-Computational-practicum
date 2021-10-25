@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace Computation_Practicum_app
 {
-    public class ImprovedEulerMethod : Grid
+    public class ImprovedEulerMethod : NumericalMethod
     {
-        public ImprovedEulerMethod(int N, double y0, double x0, double X) : base(N, x0, X)
+        public ImprovedEulerMethod(int N, double y0, double x0, double X, DifferentialEquation DE) : base(N, y0, x0, X, DE)
         {
-            double h = (X - x0) / N;
-            for (int i = 0; i < N; i++)
-            {
-                if (i == 0) y[i] = y0;
-                else
-                {
-                    double k1 = x[i-1] * y[i-1]  - x[i-1] * Math.Pow(y[i-1], 3);
-                    double yi = y[i - 1] + h * k1;
-                    double k2 = x[i] * yi - x[i] * Math.Pow(yi, 3);
-                    y[i] = y[i - 1] + h * (k1 + k2) / 2;
-
-                }
-            }
+        
+        }
+        protected override double calcY(double prevX, double prevY)
+        {
+            double h = getStep();
+            double k1 = differentialEquation.calcDerivative(prevX, prevY);
+            double k2 = differentialEquation.calcDerivative(prevX+h, prevY+h*k1);
+            double Y = prevY + h * (k1 + k2) / 2;
+            return Y;
         }
     }
 }

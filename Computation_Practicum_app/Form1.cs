@@ -25,20 +25,20 @@ namespace Computation_Practicum_app
                 double x0 = Double.Parse(textBox_x0.Text);
                 double X = Double.Parse(textBox_X.Text);
                 int N = Int32.Parse(textBox_N.Text);
+                /*
+                EulerMethod newEM = new EulerMethod(N, y0, x0, X);
+                ImprovedEulerMethod newIEM = new ImprovedEulerMethod(N, y0, x0, X);
+                RungeKuttaMethod newRKM = new RungeKuttaMethod(N, y0, x0, X);
+                DifferentialEquation newES = new MyDifferentialEquation(N, y0, x0, X);
+                
+                chart1.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
+                chart1.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
+                chart1.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
+                chart1.Series[3].Points.DataBindXY(newEM.getX(), newEM.getY());
 
-                EM newEM = new EM(N, y0, x0, X);
-                IEM newIEM = new IEM(N, y0, x0, X);
-                RKM newRKM = new RKM(N, y0, x0, X);
-                ES newES = new ES(N, y0, x0, X);
-
-                chart1.Series[0].Points.DataBindXY(newEM.x, newEM.y);
-                chart1.Series[1].Points.DataBindXY(newIEM.x, newIEM.y);
-                chart1.Series[2].Points.DataBindXY(newRKM.x, newRKM.y);
-                chart1.Series[3].Points.DataBindXY(newES.x, newES.y);
-
-                chart2.Series[0].Points.DataBindXY(newEM.x, newEM.y);
-                chart2.Series[1].Points.DataBindXY(newIEM.x, newIEM.y);
-                chart2.Series[2].Points.DataBindXY(newRKM.x, newRKM.y);
+                chart2.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
+                chart2.Series[1].Points.DataBindXY(newEM.getX(), newEM.getY());
+                chart2.Series[2].Points.DataBindXY(newEM.getX(), newEM.getY());
                 
 
                 chart1.ChartAreas[0].AxisX.Minimum = x0;
@@ -46,6 +46,7 @@ namespace Computation_Practicum_app
 
                 chart2.ChartAreas[0].AxisX.Minimum = x0;
                 chart2.ChartAreas[0].AxisX.Maximum = X;
+                */
             }
             catch
             {

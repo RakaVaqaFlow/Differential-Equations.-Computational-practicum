@@ -8,18 +8,33 @@ namespace Computation_Practicum_app
 {
     public abstract class NumericalMethod : Grid
     {
-        public NumericalMethod(int N, double y0, double x0, double X)
-            : base(N, x0, X) { }
+        protected DifferentialEquation differentialEquation;
+        public NumericalMethod(int N, double y0, double x0, double X, DifferentialEquation DE)
+            : base(N, y0, x0, X) {
 
-        /*
-        public calcLocalTruncationError()
+            double h = getStep();
+            double[] y = getY();
+            double[] x = getX();
+
+            for (int i = 0; i < N; i++)
+            {
+                if (i == 0) y[i] = y0;
+                else y[i] = calcY(x[i - 1], y[i - 1]);
+            }
+
+            this.setY(y);
+            this.differentialEquation = DE;
+        }
+
+        protected abstract double calcY(double prevX, double prevY);
+        public void calcLocalTruncationError() 
+        {
+            
+        }
+        public void calcGlobalTruncationError(int n0, int n)
         {
 
         }
-
-        public calcGlobalTruncationError(){
         
-        }
-        */
     }
 }
