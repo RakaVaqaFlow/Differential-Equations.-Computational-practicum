@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Computation_Practicum_app
 {
-    public class RKM : NumericalMethod
+    public class RungeKuttaMethod : NumericalMethod
     {
-        public RKM(int N, double y0, double x0, double X) : base(N, y0, x0, X)
+        public RungeKuttaMethod(int N, double y0, double x0, double X) : base(N, y0, x0, X)
         {
             double h = (X - x0) / N;
             for (int i = 0; i < N; i++)
