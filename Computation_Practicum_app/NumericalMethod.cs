@@ -9,6 +9,8 @@ namespace Computation_Practicum_app
     public abstract class NumericalMethod : Grid
     {
         protected DifferentialEquation differentialEquation;
+        private double[] localErrors;
+        //private double[] globalErrors;
         public NumericalMethod(int N, double y0, double x0, double X, DifferentialEquation DE)
             : base(N, y0, x0, X) {
             this.differentialEquation = DE;
@@ -23,17 +25,30 @@ namespace Computation_Practicum_app
                 else y[i] = calcY(x[i - 1], y[i - 1]);
             }
             this.setY(y);
-            
+            calcLocalTruncationErrors();
         }
 
         protected abstract double calcY(double prevX, double prevY);
-        public void calcLocalTruncationError() 
+        private void calcLocalTruncationErrors() 
         {
-            
+            double[] yExact = differentialEquation.getY();
+            double[] yNumerical = getY();
+            double[] Errors = new double[getN()];
+            for(int i=0; i<getN(); i++)
+            {
+                Errors[i] = Math.Abs(yExact[i] - yNumerical[i]);
+            }
+            this.localErrors = Errors;
         }
-        public void calcGlobalTruncationError(int n0, int n)
+        public double[] getLocalTruncationErrors() => this.localErrors;
+        public double getGlobalTruncationError()
         {
-
+            double maxError = 0;
+            for(int i=0; i<getN(); i++)
+            {
+                if (localErrors[i] > maxError) maxError = localErrors[i];
+            }
+            return maxError;
         }
         
     }
