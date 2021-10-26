@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataСontainer.cs" />
     <Compile Include="DifferentialEquation.cs" />
     <Compile Include="EulerMethod.cs" />
     <Compile Include="Form1.cs">

@@ -33,21 +33,21 @@ namespace Computation_Practicum_app
                 NumericalMethod newRKM = new RungeKuttaMethod(N, y0, x0, X, newDE);
 
 
-                chart1.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
-                chart1.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
-                chart1.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
-                chart1.Series[3].Points.DataBindXY(newEM.getX(), newEM.getY());
+                Solutions.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
+                Solutions.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
+                Solutions.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
+                Solutions.Series[3].Points.DataBindXY(newEM.getX(), newEM.getY());
 
-                chart2.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
-                chart2.Series[1].Points.DataBindXY(newEM.getX(), newEM.getY());
-                chart2.Series[2].Points.DataBindXY(newEM.getX(), newEM.getY());
+                LTE.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
+                LTE.Series[1].Points.DataBindXY(newEM.getX(), newEM.getY());
+                LTE.Series[2].Points.DataBindXY(newEM.getX(), newEM.getY());
                 
 
-                chart1.ChartAreas[0].AxisX.Minimum = x0;
-                chart1.ChartAreas[0].AxisX.Maximum = X;
+                Solutions.ChartAreas[0].AxisX.Minimum = x0;
+                Solutions.ChartAreas[0].AxisX.Maximum = X;
 
-                chart2.ChartAreas[0].AxisX.Minimum = x0;
-                chart2.ChartAreas[0].AxisX.Maximum = X;
+                LTE.ChartAreas[0].AxisX.Minimum = x0;
+                LTE.ChartAreas[0].AxisX.Maximum = X;
                 
             }
             catch
@@ -59,25 +59,25 @@ namespace Computation_Practicum_app
 
         private void checkBox_EM_CheckedChanged(object sender, EventArgs e)
         {
-            chart1.Series[0].Enabled = checkBox_EM.Checked;
-            chart2.Series[0].Enabled = checkBox_EM.Checked;
+            Solutions.Series[0].Enabled = checkBox_EM.Checked;
+            LTE.Series[0].Enabled = checkBox_EM.Checked;
         }
 
         private void checkBox_IEM_CheckedChanged(object sender, EventArgs e)
         {
-            chart1.Series[1].Enabled = checkBox_IEM.Checked;
-            chart2.Series[1].Enabled = checkBox_IEM.Checked;
+            Solutions.Series[1].Enabled = checkBox_IEM.Checked;
+            LTE.Series[1].Enabled = checkBox_IEM.Checked;
         }
 
         private void checkBox_RKM_CheckedChanged(object sender, EventArgs e)
         {
-            chart1.Series[2].Enabled = checkBox_RKM.Checked;
-            chart2.Series[2].Enabled = checkBox_RKM.Checked;
+            Solutions.Series[2].Enabled = checkBox_RKM.Checked;
+            LTE.Series[2].Enabled = checkBox_RKM.Checked;
         }
 
         private void checkBox_ES_CheckedChanged(object sender, EventArgs e)
         {
-            chart1.Series[3].Enabled = checkBox_ES.Checked;
+            Solutions.Series[3].Enabled = checkBox_ES.Checked;
         }
 
         private void Form1_Shown(object sender, EventArgs e)

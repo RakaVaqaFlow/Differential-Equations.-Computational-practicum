@@ -29,23 +29,29 @@ namespace Computation_Practicum_app
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Solutions = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LTE = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.checkBox_ES = new System.Windows.Forms.CheckBox();
             this.checkBox_RKM = new System.Windows.Forms.CheckBox();
             this.checkBox_IEM = new System.Windows.Forms.CheckBox();
@@ -59,22 +65,25 @@ namespace Computation_Practicum_app
             this.label_x0 = new System.Windows.Forms.Label();
             this.textBox_y0 = new System.Windows.Forms.TextBox();
             this.label_y0 = new System.Windows.Forms.Label();
+            this.GTE = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Solutions)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LTE)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GTE)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -96,130 +105,138 @@ namespace Computation_Practicum_app
             this.splitContainer1.Panel2.Controls.Add(this.label_x0);
             this.splitContainer1.Panel2.Controls.Add(this.textBox_y0);
             this.splitContainer1.Panel2.Controls.Add(this.label_y0);
-            this.splitContainer1.Size = new System.Drawing.Size(600, 366);
-            this.splitContainer1.SplitterDistance = 384;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer1.SplitterDistance = 512;
             this.splitContainer1.TabIndex = 0;
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl.Name = "tabPage";
+            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(384, 366);
+            this.tabControl.Size = new System.Drawing.Size(512, 450);
             this.tabControl.TabIndex = 1;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
-
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.chart1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Controls.Add(this.Solutions);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(376, 340);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(504, 421);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "sol. graph";
+            this.tabPage1.Text = "Solution";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // Solutions
             // 
-            chartArea3.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea3.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(2, 2);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2);
-            this.chart1.Name = "chart1";
-            series8.BorderWidth = 2;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Legend1";
-            series8.LegendText = "Euler method";
-            series8.Name = "Series_EM";
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Legend = "Legend1";
-            series9.LegendText = "Imp. Euler\'s method";
-            series9.Name = "Series_IEM";
-            series10.BorderWidth = 2;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.LegendText = "Runge Kutta method";
-            series10.Name = "Series_RK";
-            series11.BorderWidth = 2;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series11.Legend = "Legend1";
-            series11.LegendText = "Exact solution";
-            series11.Name = "Series_ES";
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Size = new System.Drawing.Size(372, 336);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            chartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "ChartArea1";
+            this.Solutions.ChartAreas.Add(chartArea1);
+            this.Solutions.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.Solutions.Legends.Add(legend1);
+            this.Solutions.Location = new System.Drawing.Point(3, 2);
+            this.Solutions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Solutions.Name = "Solutions";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Euler\'s method";
+            series1.Name = "Series_EM";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.LegendText = "Imp. Euler\'s method";
+            series2.Name = "Series_IEM";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.LegendText = "Runge-Kutta method";
+            series3.Name = "Series_RK";
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.LegendText = "Exact solution";
+            series4.Name = "Series_ES";
+            this.Solutions.Series.Add(series1);
+            this.Solutions.Series.Add(series2);
+            this.Solutions.Series.Add(series3);
+            this.Solutions.Series.Add(series4);
+            this.Solutions.Size = new System.Drawing.Size(498, 417);
+            this.Solutions.TabIndex = 0;
+            this.Solutions.Text = "chart1";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.chart2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Controls.Add(this.LTE);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(376, 340);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(504, 421);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "error graph";
+            this.tabPage2.Text = "LTE";
             this.tabPage2.UseVisualStyleBackColor = true;
-            
             // 
-            // chart2
+            // LTE
             // 
-            chartArea4.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea4.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
-            this.chart2.Location = new System.Drawing.Point(2, 2);
-            this.chart2.Margin = new System.Windows.Forms.Padding(2);
-            this.chart2.Name = "chart2";
-            series12.BorderWidth = 2;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Legend = "Legend1";
-            series12.LegendText = "EM error";
-            series12.Name = "Series_EM_Error";
-            series13.BorderWidth = 2;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series13.Legend = "Legend1";
-            series13.LegendText = "IEM error";
-            series13.Name = "Series_IEM_Error";
-            series14.BorderWidth = 2;
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Legend = "Legend1";
-            series14.LegendText = "RKM error";
-            series14.Name = "Series_RKM_error";
-            this.chart2.Series.Add(series12);
-            this.chart2.Series.Add(series13);
-            this.chart2.Series.Add(series14);
-            this.chart2.Size = new System.Drawing.Size(372, 336);
-            this.chart2.TabIndex = 0;
-            this.chart2.Text = "chart2";
+            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.Name = "ChartArea1";
+            this.LTE.ChartAreas.Add(chartArea2);
+            this.LTE.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.LTE.Legends.Add(legend2);
+            this.LTE.Location = new System.Drawing.Point(3, 2);
+            this.LTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LTE.Name = "LTE";
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.LegendText = "EM LTE";
+            series5.Name = "Series_EM_LTE";
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.LegendText = "IEM LTE";
+            series6.Name = "Series_IEM_LTE";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.LegendText = "RKM LTE";
+            series7.Name = "Series_RKM_LTE";
+            this.LTE.Series.Add(series5);
+            this.LTE.Series.Add(series6);
+            this.LTE.Series.Add(series7);
+            this.LTE.Size = new System.Drawing.Size(498, 417);
+            this.LTE.TabIndex = 0;
+            this.LTE.Text = "chart2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.GTE);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(504, 421);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "GTE";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // checkBox_ES
             // 
@@ -227,10 +244,10 @@ namespace Computation_Practicum_app
             this.checkBox_ES.Checked = true;
             this.checkBox_ES.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_ES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_ES.Location = new System.Drawing.Point(0, 256);
-            this.checkBox_ES.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_ES.Location = new System.Drawing.Point(0, 304);
+            this.checkBox_ES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox_ES.Name = "checkBox_ES";
-            this.checkBox_ES.Size = new System.Drawing.Size(213, 17);
+            this.checkBox_ES.Size = new System.Drawing.Size(284, 21);
             this.checkBox_ES.TabIndex = 19;
             this.checkBox_ES.Text = "ES";
             this.checkBox_ES.UseVisualStyleBackColor = true;
@@ -242,10 +259,10 @@ namespace Computation_Practicum_app
             this.checkBox_RKM.Checked = true;
             this.checkBox_RKM.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_RKM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_RKM.Location = new System.Drawing.Point(0, 239);
-            this.checkBox_RKM.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_RKM.Location = new System.Drawing.Point(0, 283);
+            this.checkBox_RKM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox_RKM.Name = "checkBox_RKM";
-            this.checkBox_RKM.Size = new System.Drawing.Size(213, 17);
+            this.checkBox_RKM.Size = new System.Drawing.Size(284, 21);
             this.checkBox_RKM.TabIndex = 18;
             this.checkBox_RKM.Text = "RKM";
             this.checkBox_RKM.UseVisualStyleBackColor = true;
@@ -257,10 +274,10 @@ namespace Computation_Practicum_app
             this.checkBox_IEM.Checked = true;
             this.checkBox_IEM.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_IEM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_IEM.Location = new System.Drawing.Point(0, 222);
-            this.checkBox_IEM.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_IEM.Location = new System.Drawing.Point(0, 262);
+            this.checkBox_IEM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox_IEM.Name = "checkBox_IEM";
-            this.checkBox_IEM.Size = new System.Drawing.Size(213, 17);
+            this.checkBox_IEM.Size = new System.Drawing.Size(284, 21);
             this.checkBox_IEM.TabIndex = 17;
             this.checkBox_IEM.Text = "IEM";
             this.checkBox_IEM.UseVisualStyleBackColor = true;
@@ -272,10 +289,10 @@ namespace Computation_Practicum_app
             this.checkBox_EM.Checked = true;
             this.checkBox_EM.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_EM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox_EM.Location = new System.Drawing.Point(0, 205);
-            this.checkBox_EM.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_EM.Location = new System.Drawing.Point(0, 241);
+            this.checkBox_EM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox_EM.Name = "checkBox_EM";
-            this.checkBox_EM.Size = new System.Drawing.Size(213, 17);
+            this.checkBox_EM.Size = new System.Drawing.Size(284, 21);
             this.checkBox_EM.TabIndex = 16;
             this.checkBox_EM.Text = "EM";
             this.checkBox_EM.UseVisualStyleBackColor = true;
@@ -284,11 +301,11 @@ namespace Computation_Practicum_app
             // button_Plot
             // 
             this.button_Plot.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_Plot.Location = new System.Drawing.Point(0, 172);
-            this.button_Plot.Margin = new System.Windows.Forms.Padding(4);
+            this.button_Plot.Location = new System.Drawing.Point(0, 200);
+            this.button_Plot.Margin = new System.Windows.Forms.Padding(5);
             this.button_Plot.Name = "button_Plot";
-            this.button_Plot.Padding = new System.Windows.Forms.Padding(2);
-            this.button_Plot.Size = new System.Drawing.Size(213, 33);
+            this.button_Plot.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_Plot.Size = new System.Drawing.Size(284, 41);
             this.button_Plot.TabIndex = 15;
             this.button_Plot.Text = "Plot";
             this.button_Plot.UseVisualStyleBackColor = true;
@@ -297,10 +314,10 @@ namespace Computation_Practicum_app
             // textBox_N
             // 
             this.textBox_N.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_N.Location = new System.Drawing.Point(0, 152);
-            this.textBox_N.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_N.Location = new System.Drawing.Point(0, 178);
+            this.textBox_N.Margin = new System.Windows.Forms.Padding(5);
             this.textBox_N.Name = "textBox_N";
-            this.textBox_N.Size = new System.Drawing.Size(213, 20);
+            this.textBox_N.Size = new System.Drawing.Size(284, 22);
             this.textBox_N.TabIndex = 14;
             this.textBox_N.Text = "30";
             this.textBox_N.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -308,21 +325,20 @@ namespace Computation_Practicum_app
             // label_N
             // 
             this.label_N.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_N.Location = new System.Drawing.Point(0, 129);
-            this.label_N.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_N.Location = new System.Drawing.Point(0, 150);
             this.label_N.Name = "label_N";
-            this.label_N.Padding = new System.Windows.Forms.Padding(4);
-            this.label_N.Size = new System.Drawing.Size(213, 23);
+            this.label_N.Padding = new System.Windows.Forms.Padding(5);
+            this.label_N.Size = new System.Drawing.Size(284, 28);
             this.label_N.TabIndex = 13;
             this.label_N.Text = "N";
             // 
             // textBox_X
             // 
             this.textBox_X.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_X.Location = new System.Drawing.Point(0, 109);
-            this.textBox_X.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_X.Location = new System.Drawing.Point(0, 128);
+            this.textBox_X.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_X.Name = "textBox_X";
-            this.textBox_X.Size = new System.Drawing.Size(213, 20);
+            this.textBox_X.Size = new System.Drawing.Size(284, 22);
             this.textBox_X.TabIndex = 12;
             this.textBox_X.Text = "3";
             this.textBox_X.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -330,21 +346,20 @@ namespace Computation_Practicum_app
             // label_X
             // 
             this.label_X.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_X.Location = new System.Drawing.Point(0, 86);
-            this.label_X.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_X.Location = new System.Drawing.Point(0, 100);
             this.label_X.Name = "label_X";
-            this.label_X.Padding = new System.Windows.Forms.Padding(4);
-            this.label_X.Size = new System.Drawing.Size(213, 23);
+            this.label_X.Padding = new System.Windows.Forms.Padding(5);
+            this.label_X.Size = new System.Drawing.Size(284, 28);
             this.label_X.TabIndex = 11;
             this.label_X.Text = "X";
             // 
             // textBox_x0
             // 
             this.textBox_x0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_x0.Location = new System.Drawing.Point(0, 66);
-            this.textBox_x0.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_x0.Location = new System.Drawing.Point(0, 78);
+            this.textBox_x0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_x0.Name = "textBox_x0";
-            this.textBox_x0.Size = new System.Drawing.Size(213, 20);
+            this.textBox_x0.Size = new System.Drawing.Size(284, 22);
             this.textBox_x0.TabIndex = 10;
             this.textBox_x0.Text = "0";
             this.textBox_x0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -352,21 +367,20 @@ namespace Computation_Practicum_app
             // label_x0
             // 
             this.label_x0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_x0.Location = new System.Drawing.Point(0, 43);
-            this.label_x0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_x0.Location = new System.Drawing.Point(0, 50);
             this.label_x0.Name = "label_x0";
-            this.label_x0.Padding = new System.Windows.Forms.Padding(4);
-            this.label_x0.Size = new System.Drawing.Size(213, 23);
+            this.label_x0.Padding = new System.Windows.Forms.Padding(5);
+            this.label_x0.Size = new System.Drawing.Size(284, 28);
             this.label_x0.TabIndex = 9;
             this.label_x0.Text = "x₀";
             // 
             // textBox_y0
             // 
             this.textBox_y0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_y0.Location = new System.Drawing.Point(0, 23);
-            this.textBox_y0.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_y0.Location = new System.Drawing.Point(0, 28);
+            this.textBox_y0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_y0.Name = "textBox_y0";
-            this.textBox_y0.Size = new System.Drawing.Size(213, 20);
+            this.textBox_y0.Size = new System.Drawing.Size(284, 22);
             this.textBox_y0.TabIndex = 1;
             this.textBox_y0.Text = "0,70710";
             this.textBox_y0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -375,21 +389,56 @@ namespace Computation_Practicum_app
             // 
             this.label_y0.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_y0.Location = new System.Drawing.Point(0, 0);
-            this.label_y0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_y0.Name = "label_y0";
-            this.label_y0.Padding = new System.Windows.Forms.Padding(4);
-            this.label_y0.Size = new System.Drawing.Size(213, 23);
+            this.label_y0.Padding = new System.Windows.Forms.Padding(5);
+            this.label_y0.Size = new System.Drawing.Size(284, 28);
             this.label_y0.TabIndex = 0;
             this.label_y0.Text = "y₀";
             // 
+            // GTE
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.GTE.ChartAreas.Add(chartArea3);
+            this.GTE.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.GTE.Legends.Add(legend3);
+            this.GTE.Location = new System.Drawing.Point(0, 0);
+            this.GTE.Name = "GTE";
+            series8.BorderWidth = 2;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.LabelBorderWidth = 2;
+            series8.Legend = "Legend1";
+            series8.LegendText = "EM GTE";
+            series8.Name = "Series_EM_GTE";
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.LabelBorderWidth = 2;
+            series9.Legend = "Legend1";
+            series9.LegendText = "IEM GTE";
+            series9.Name = "Series_IEM_GTE";
+            series10.BorderWidth = 2;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.LegendText = "RKM GTE";
+            series10.Name = "Series_RKM_GTE";
+            this.GTE.Series.Add(series8);
+            this.GTE.Series.Add(series9);
+            this.GTE.Series.Add(series10);
+            this.GTE.Size = new System.Drawing.Size(504, 421);
+            this.GTE.TabIndex = 0;
+            this.GTE.Text = "chart1";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Computational practicum";
@@ -401,9 +450,11 @@ namespace Computation_Practicum_app
             this.splitContainer1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Solutions)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LTE)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GTE)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,7 +462,7 @@ namespace Computation_Practicum_app
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Solutions;
         private System.Windows.Forms.TextBox textBox_y0;
         private System.Windows.Forms.Label label_y0;
         private System.Windows.Forms.TextBox textBox_x0;
@@ -428,7 +479,9 @@ namespace Computation_Practicum_app
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart LTE;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GTE;
     }
 }
 
