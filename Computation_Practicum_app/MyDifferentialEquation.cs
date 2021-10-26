@@ -25,10 +25,11 @@ namespace Computation_Practicum_app
             double h = getStep();
             double[] x = getX();
             double[] y = getY();
+            double constant = Math.Exp(Math.Pow(getX0(), 2)) * (1 / Math.Pow(getY0(), 2)-1);
             for (int i = 0; i < getN(); i++)
             {
                 if (i == 0) y[i] = getY0();
-                else y[i] = Math.Sqrt(Math.Exp(Math.Pow(x[i - 1], 2)) / (1 + Math.Exp(Math.Pow(x[i - 1], 2))));
+                else y[i] = Math.Sqrt(Math.Exp(Math.Pow(x[i - 1], 2)) / (constant + Math.Exp(Math.Pow(x[i - 1], 2))));
             }
             setY(y);
         }

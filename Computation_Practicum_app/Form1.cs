@@ -36,11 +36,11 @@ namespace Computation_Practicum_app
                 Solutions.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
                 Solutions.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
                 Solutions.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
-                Solutions.Series[3].Points.DataBindXY(newEM.getX(), newEM.getY());
+                Solutions.Series[3].Points.DataBindXY(newDE.getX(), newDE.getY());
 
-                LTE.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
-                LTE.Series[1].Points.DataBindXY(newEM.getX(), newEM.getY());
-                LTE.Series[2].Points.DataBindXY(newEM.getX(), newEM.getY());
+                LTE.Series[0].Points.DataBindXY(newEM.getX(), newEM.getLocalTruncationErrors());
+                LTE.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getLocalTruncationErrors());
+                LTE.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getLocalTruncationErrors());
                 
 
                 Solutions.ChartAreas[0].AxisX.Minimum = x0;
@@ -89,12 +89,63 @@ namespace Computation_Practicum_app
         {
             if(tabControl.SelectedIndex == 0)
             {
+                label_y0.Visible = true;
+                textBox_y0.Visible = true;
+
+                label_x0.Visible = true;
+                textBox_x0.Visible = true;
+
+                label_X.Visible = true;
+                textBox_X.Visible = true;
+
+                label_n0.Visible = false;
+                textBox_n0.Visible = false;
+
+                label_N.Visible = true;
+                textBox_N.Visible = true;
+
                 checkBox_ES.Visible = true;
+
             }
-            else if (tabControl.SelectedIndex == 1)
+            else if(tabControl.SelectedIndex == 1)
             {
+                label_y0.Visible = true;
+                textBox_y0.Visible = true;
+
+                label_x0.Visible = true;
+                textBox_x0.Visible = true;
+
+                label_X.Visible = true;
+                textBox_X.Visible = true;
+
+                label_n0.Visible = false;
+                textBox_n0.Visible = false;
+
+                label_N.Visible = true;
+                textBox_N.Visible = true;
+
+                checkBox_ES.Visible = false;
+            }
+            else if (tabControl.SelectedIndex == 2)
+            {   
+                label_y0.Visible = false;
+                textBox_y0.Visible = false;
+
+                label_x0.Visible = false;
+                textBox_x0.Visible = false;
+
+                label_X.Visible = false;
+                textBox_X.Visible = false;
+                
+                textBox_n0.Visible = true;
+                label_n0.Visible = true;
+
+                label_N.Visible = true;
+                textBox_N.Visible = true;
+
                 checkBox_ES.Visible = false;
             }
         }
+
     }
 }

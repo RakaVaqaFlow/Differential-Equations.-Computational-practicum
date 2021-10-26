@@ -10,7 +10,6 @@ namespace Computation_Practicum_app
     {
         protected DifferentialEquation differentialEquation;
         private double[] localErrors;
-        //private double[] globalErrors;
         public NumericalMethod(int N, double y0, double x0, double X, DifferentialEquation DE)
             : base(N, y0, x0, X) {
             this.differentialEquation = DE;
