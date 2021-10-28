@@ -24,31 +24,36 @@ namespace Computation_Practicum_app
                 double y0 = Double.Parse(textBox_y0.Text);
                 double x0 = Double.Parse(textBox_x0.Text);
                 double X = Double.Parse(textBox_X.Text);
+                int n0 = Int32.Parse(textBox_n0.Text);
                 int N = Int32.Parse(textBox_N.Text);
-
-                DifferentialEquation newDE = new MyDifferentialEquation(N, y0, x0, X);
-
-                NumericalMethod newEM = new EulerMethod(N, y0, x0, X, newDE);
-                NumericalMethod newIEM = new ImprovedEulerMethod(N, y0, x0, X, newDE);
-                NumericalMethod newRKM = new RungeKuttaMethod(N, y0, x0, X, newDE);
-
-
-                Solutions.Series[0].Points.DataBindXY(newEM.getX(), newEM.getY());
-                Solutions.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getY());
-                Solutions.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getY());
-                Solutions.Series[3].Points.DataBindXY(newDE.getX(), newDE.getY());
-
-                LTE.Series[0].Points.DataBindXY(newEM.getX(), newEM.getLocalTruncationErrors());
-                LTE.Series[1].Points.DataBindXY(newIEM.getX(), newIEM.getLocalTruncationErrors());
-                LTE.Series[2].Points.DataBindXY(newRKM.getX(), newRKM.getLocalTruncationErrors());
+                bool valid = InputChecker.CheckInput(y0, x0, X, n0, N);
+                if (!valid) return;
+                DataСontainer data = new DataСontainer(y0, x0, X, n0, N);
                 
+                Solutions.Series[0].Points.DataBindXY(data.EuelerMethod.getX(), data.EuelerMethod.getY());
+                Solutions.Series[1].Points.DataBindXY(data.ImprovedEulerMethod.getX(), data.ImprovedEulerMethod.getY());
+                Solutions.Series[2].Points.DataBindXY(data.RungeKuttaMethod.getX(), data.RungeKuttaMethod.getY());
+                Solutions.Series[3].Points.DataBindXY(data.myDE.getX(), data.myDE.getY());
+
+                LTE.Series[0].Points.DataBindXY(data.EuelerMethod.getX(), data.EuelerMethod.getLocalTruncationErrors());
+                LTE.Series[1].Points.DataBindXY(data.ImprovedEulerMethod.getX(), data.ImprovedEulerMethod.getLocalTruncationErrors());
+                LTE.Series[2].Points.DataBindXY(data.RungeKuttaMethod.getX(), data.RungeKuttaMethod.getLocalTruncationErrors());
+
+                int[] xGE = data.getXforGlobalError();
+
+                GE.Series[0].Points.DataBindXY(xGE, data.getGlobalErrorOfEM());
+                GE.Series[1].Points.DataBindXY(xGE, data.getGlobalErrorOfIEM());
+                GE.Series[2].Points.DataBindXY(xGE, data.getGlobalErrorOfRKM());
 
                 Solutions.ChartAreas[0].AxisX.Minimum = x0;
                 Solutions.ChartAreas[0].AxisX.Maximum = X;
 
                 LTE.ChartAreas[0].AxisX.Minimum = x0;
                 LTE.ChartAreas[0].AxisX.Maximum = X;
-                
+
+                GE.ChartAreas[0].AxisX.Minimum = n0;
+                GE.ChartAreas[0].AxisX.Maximum = N;
+
             }
             catch
             {
@@ -61,18 +66,21 @@ namespace Computation_Practicum_app
         {
             Solutions.Series[0].Enabled = checkBox_EM.Checked;
             LTE.Series[0].Enabled = checkBox_EM.Checked;
+            GE.Series[0].Enabled = checkBox_EM.Checked;
         }
 
         private void checkBox_IEM_CheckedChanged(object sender, EventArgs e)
         {
             Solutions.Series[1].Enabled = checkBox_IEM.Checked;
             LTE.Series[1].Enabled = checkBox_IEM.Checked;
+            GE.Series[1].Enabled = checkBox_IEM.Checked;
         }
 
         private void checkBox_RKM_CheckedChanged(object sender, EventArgs e)
         {
             Solutions.Series[2].Enabled = checkBox_RKM.Checked;
             LTE.Series[2].Enabled = checkBox_RKM.Checked;
+            GE.Series[2].Enabled = checkBox_RKM.Checked;
         }
 
         private void checkBox_ES_CheckedChanged(object sender, EventArgs e)

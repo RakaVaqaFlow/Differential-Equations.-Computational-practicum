@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Grid.cs" />
     <Compile Include="ImprovedEulerMethod.cs" />
+    <Compile Include="InputChecker.cs" />
     <Compile Include="MyDifferentialEquation.cs" />
     <Compile Include="NumericalMethod.cs" />
     <Compile Include="Program.cs" />

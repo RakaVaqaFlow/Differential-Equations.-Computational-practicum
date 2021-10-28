@@ -40,7 +40,7 @@ namespace Computation_Practicum_app
             this.localErrors = Errors;
         }
         public double[] getLocalTruncationErrors() => this.localErrors;
-        public double getGlobalTruncationError()
+        public double getGlobalError()
         {
             double maxError = 0;
             for(int i=0; i<getN(); i++)
