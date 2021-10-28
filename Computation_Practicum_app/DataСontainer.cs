@@ -18,6 +18,7 @@ namespace Computation_Practicum_app
         private double x0;
         private double X;
         private Int32[] xGE;
+       
         private double[] getGlobalError(string method)
         {
             double[] GlobalError = new double[N - n0];
@@ -69,24 +70,6 @@ namespace Computation_Practicum_app
         public double[] getGlobalErrorOfRKM()
         {
             return getGlobalError("RungeKuttaMethod");
-        }
-
-        public double getYmaxOfSol()
-        {
-
-        }
-        public double getYmaxOfLTE()
-        {
-
-        }
-        public double getYminOfSol()
-        {
-
-        }
-
-        public double getYminOfLTE()
-        {
-
         }
     }
 }
