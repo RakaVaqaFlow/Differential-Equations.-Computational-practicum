@@ -45,6 +45,7 @@ namespace Computation_Practicum_app
                 GE.Series[1].Points.DataBindXY(xGE, data.getGlobalErrorOfIEM());
                 GE.Series[2].Points.DataBindXY(xGE, data.getGlobalErrorOfRKM());
 
+                
                 Solutions.ChartAreas[0].AxisX.Minimum = x0;
                 Solutions.ChartAreas[0].AxisX.Maximum = X;
 
