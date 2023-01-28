@@ -74,9 +74,7 @@ class).
 
 In my implementation, if you want to add a new numerical method, you
 just need to inherit a new class from the NumericalMethod class and
-redefine the function calcY(). For example, implementation of
-EulerMethod class (fig. 7):
-
+redefine the function calcY().
 
 Also, if you want to see a solution for another varient, inherit the new
 class from the DifferentialEquation class and override the following
@@ -85,19 +83,18 @@ methods:
 * double calcDerivative(double x, double y)
 * void calcExactSolution()
 * double[] findDiscontinuityPoints()
-For example, my variant 11 has structure (fig. 8):
 
 ## 3. Method analysis
 
 
-The graph shows (fig. 3) that numerical methods give a result close
+The graph shows that numerical methods give a result close
 enough to the real one.
-The plot of the local error (fig. 4) shows that the error of the Euler’s
+The plot of the local error shows that the error of the Euler’s
 method at small values of 𝑥 is less than that of others (perhaps it depends
 on the function, since this is not observed for other variants), however,
 closer to the right border, the Runge-Kutta method and the Improved
 Euler’s method are more accurate. If we look at the graph of the global
-error (fig. 5), we can see that the Runge-Kutta method is indeed more
+error, we can see that the Runge-Kutta method is indeed more
 accurate than the Improved Euler’s method and Improved Euler’s method
 more accurate than the Euler’s method.
 
