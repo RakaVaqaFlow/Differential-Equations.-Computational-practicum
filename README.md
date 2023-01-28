@@ -1,4 +1,4 @@
-# BS20- 04 Computational Practicum Report Variant 11
+# BS20-04 Computational Practicum Report Variant 11
 
 ## Introduction
 
