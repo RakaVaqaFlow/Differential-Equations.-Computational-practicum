@@ -82,9 +82,9 @@ Also, if you want to see a solution for another varient, inherit the new
 class from the DifferentialEquation class and override the following
 methods:
 
- double calcDerivative(double x, double y)
- void calcExactSolution()
- double[] findDiscontinuityPoints()
+* double calcDerivative(double x, double y)
+* void calcExactSolution()
+* double[] findDiscontinuityPoints()
 For example, my variant 11 has structure (fig. 8):
 
 ## 3. Method analysis
